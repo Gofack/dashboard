@@ -1,0 +1,67 @@
+.sidebar {
+	background: $white;
+	padding: 1rem;
+	display: flex;
+	width: 100%;
+	@include media('>desktop') {
+		padding: 3.6rem 2.8rem 7.6rem;
+		flex-direction: column;
+		width: clamp(25rem, 25%, 30.6rem);
+	}
+	&__burger {
+		display: none;
+
+		@include media('<desktop') {
+			position: relative;
+			width: 3rem;
+			height: 3rem;
+			border: 0.3rem solid transparent;
+			display: block;
+			font-size: 0;
+			line-height: 0;
+		}
+
+		span {
+			@include media('<desktop') {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 100%;
+				transform: translate(-50%, -50%);
+				border-bottom: 0.1rem solid;
+				height: 0;
+				transition: all 0.3s;
+
+				@for $i from 1 through 3 {
+					&:nth-child(#{$i}) {
+						@if ($i == 1) {
+							margin-top: -1rem;
+						}
+						@if ($i == 3) {
+							margin-top: 1rem;
+						}
+					}
+				}
+
+				.menu-opened & {
+					@for $i from 1 through 3 {
+						&:nth-child(#{$i}) {
+							@if ($i == 1) {
+								margin-top: 0;
+								transform: translate(-50%, -50%) rotate(45deg);
+							}
+							@if ($i == 2) {
+								opacity: 0;
+								visibility: hidden;
+							}
+							@if ($i == 3) {
+								margin-top: 0;
+								transform: translate(-50%, -50%) rotate(-45deg);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,113 @@
+/* header */
+.header {
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	top: 0;
+	left: 0;
+	transform: translateX(calc(-100% - 0.5rem));
+	@include media('>desktop') {
+		position: relative;
+	}
+	gap: 5rem;
+	&__logo {
+		display: flex;
+		align-items: flex-end;
+		font-size: 1rem;
+		color: $gray-02;
+		&-link {
+			display: flex;
+		}
+	}
+	&__version {
+		padding: 1rem 0.4rem;
+	}
+	&__menu {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		gap: 1.7rem;
+		color: $gray-02;
+		&-item {
+			&--active {
+				.header__menu-link {
+					background: $purple;
+					color: $white;
+					border-color: $purple;
+					&:hover {
+						border-color: $purple;
+					}
+				}
+				.header__menu-icon {
+					path {
+						stroke: currentColor;
+						&:not(:nth-child(2)) {
+							fill: currentColor;
+							stroke-width: 0;
+						}
+					}
+				}
+			}
+			&:not(:first-child) {
+				.header__menu-link {
+					&::after {
+						content: '';
+						height: 0.7rem;
+						width: 0.7rem;
+						transform: rotate(45deg);
+						border-top: 2px solid;
+						border-right: 2px solid;
+						margin-left: auto;
+					}
+				}
+			}
+		}
+		&-link {
+			padding: 1.1rem 1.4rem 1.1rem 1.1rem;
+			border-radius: 0.8rem;
+			display: flex;
+			align-items: center;
+			gap: 1.2rem;
+			border: 1px solid transparent;
+			&:hover {
+				border: 1px solid;
+				text-decoration: none;
+			}
+		}
+		&-icon {
+			flex-shrink: 0;
+		}
+	}
+	.navbar-holder {
+		@include media('<desktop') {
+			position: fixed;
+			background: $white;
+			height: 100vh;
+			height: calc((var(--vh, 1vh) * 100));
+			width: 100%;
+			padding: 20rem 0 6.4rem;
+			font-size: 2.2rem;
+			color: $white;
+			display: flex;
+			left: 0;
+			bottom: 0;
+			transform: translateX(-110%);
+			transition: $transition;
+			z-index: 10;
+			overflow: hidden;
+
+			@include media('<tablet') {
+				align-items: flex-start;
+				overflow-y: auto;
+				height: calc(100vh - 5rem);
+				height: calc((var(--vh, 1vh) * 100) - 5rem);
+			}
+
+			.menu-opened & {
+				transform: none;
+			}
+		}
+	}
+}

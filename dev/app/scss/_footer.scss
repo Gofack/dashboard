@@ -1,0 +1,32 @@
+/* footer */
+.footer {
+	margin-top: auto;
+	margin-left: auto;
+	@include media('>desktop') {
+		margin: 0;
+	}
+	&__account-info {
+		display: flex;
+		align-items: center;
+		@include media('>desktop') {
+			align-items: unset;
+		}
+		gap: 1.2rem;
+		&-image {
+			border-radius: 50%;
+		}
+		&-text {
+			font-size: 1.2rem;
+		}
+		&-title {
+			margin: 0;
+		}
+		&-position {
+			color: $gray-03;
+			display: none;
+			@include media('>desktop') {
+				display: block;
+			}
+		}
+	}
+}

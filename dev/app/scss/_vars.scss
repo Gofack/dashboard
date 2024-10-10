@@ -1,0 +1,52 @@
+// vars
+$images: '../images/';
+$fonts: '../fonts/';
+
+// fonts
+$poppins: 'Poppins', sans-serif;
+
+$breakpoints: (
+	phone: 576px,
+	tablet: 768px,
+	desktop: 992px,
+	minscroll: 1025px,
+	mddesktop: 1200px,
+	xldesktop: 1680px,
+);
+
+$grid-bp-sm: 576;
+$grid-bp-md: 768;
+$grid-bp-lg: 992;
+$grid-bp-xl: 1200;
+$grid-cols: 12;
+
+$map-grid-props: (
+	'': 0,
+	'-sm': $grid-bp-sm,
+	'-md': $grid-bp-md,
+	'-lg': $grid-bp-lg,
+	'-xl': $grid-bp-xl,
+);
+
+// grid variables
+$grid-columns: 12;
+
+// colors
+$white: #fff;
+$black: #000;
+$gray-01: #838383;
+$gray-02: #9197b3;
+$gray-03: #757575;
+$purple: #5932ea;
+
+// base vars
+$body-bg: #fafbff;
+$text-color-base: $black;
+$font-family-base: $poppins;
+$font-size-base: 1.4rem;
+$font-weight-base: 500;
+$line-height-base: 1.5;
+$links-color-base: inherit;
+$headings-font-weight: 700;
+
+$transition: all 0.3s ease;
