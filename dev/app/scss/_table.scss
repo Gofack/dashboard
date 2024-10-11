@@ -1,0 +1,123 @@
+.table {
+	border-collapse: collapse;
+	text-align: left;
+	width: 100%;
+	@include media('<tablet') {
+		display: block;
+	}
+	&__head {
+		position: relative;
+		@include media('<tablet') {
+			display: none;
+		}
+		&-item {
+			border-bottom: 1px solid $gray-06;
+			color: $gray-05;
+			padding: 0.7rem 1.4rem 1.4rem;
+			font-weight: 500;
+			text-align: left;
+			&:first-child {
+				padding-left: 3.8rem;
+				width: 18%;
+				@include media('>desktop') {
+					width: 20%;
+				}
+			}
+			&:last-child {
+				padding-right: 5.3rem;
+				width: 12.5%;
+			}
+			&:nth-child(2) {
+				width: 10%;
+			}
+			&:nth-child(3) {
+				text-align: center;
+				width: 15%;
+			}
+			&:nth-child(4) {
+				width: 22%;
+			}
+			&:nth-child(5) {
+				width: 13%;
+			}
+		}
+	}
+	&__body {
+		@include media('<tablet') {
+			display: block;
+			width: 100%;
+		}
+		&-row {
+			@include media('<tablet') {
+				display: block;
+				width: 100%;
+				margin: 0 0 3rem;
+			}
+		}
+		&-item {
+			padding: 1.9rem 1.4rem 2.2rem;
+			position: relative;
+			@include media('<tablet') {
+				display: block;
+				padding-left: 50%;
+				&::before {
+					content: attr(data-label);
+					position: absolute;
+					top: 50%;
+					transform: translateY(-50%);
+					left: 1.4rem;
+					max-width: calc(50% - 2.8rem);
+				}
+			}
+			@include media('>tablet') {
+				&:first-child {
+					padding-left: 3.8rem;
+					&::after {
+						width: 80%;
+						left: unset;
+						right: 0;
+					}
+				}
+				&:last-child {
+					padding-right: 1rem;
+					@include media('>minscroll') {
+						padding-right: 4.3rem;
+					}
+					&::after {
+						width: 72%;
+					}
+				}
+				&:nth-child(3) {
+					text-align: center;
+				}
+			}
+			&::after {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				border-bottom: 1px solid $gray-06;
+			}
+			&-link {
+				word-break: break-word;
+			}
+		}
+		&-label {
+			display: block;
+			border: 1px solid;
+			border-radius: 0.4rem;
+			padding: 0.3rem;
+			text-align: center;
+			width: 8rem;
+			&--active {
+				color: $green-02;
+				background: rgba($green, 0.38);
+			}
+			&--inactive {
+				color: $red;
+				background: $red-light;
+			}
+		}
+	}
+}

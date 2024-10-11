@@ -1,0 +1,28 @@
+.form {
+	&__input {
+		border-radius: 1rem;
+		background: $gray-04;
+		border: none;
+		outline: 0;
+		padding: 1.1rem 1.1rem 1.1rem 4rem;
+		font-size: 1.2rem;
+		width: 100%;
+		&::placeholder {
+			color: $gray-05;
+			letter-spacing: 0;
+		}
+	}
+	&__submit {
+		position: absolute;
+		left: 0;
+		top: 0;
+		border: none;
+		background: none;
+		outline: 0;
+		padding: 0.6rem 0.8rem;
+		height: 100%;
+		&::before {
+			content: url('../images/ico-search.svg');
+		}
+	}
+}

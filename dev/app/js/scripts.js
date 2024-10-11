@@ -87,7 +87,7 @@ function correctVh() {
 
 // mobile menu
 function mobileMenu() {
-	const openBtn = document.querySelector('.open-menu');
+	const openBtn = document.querySelector('.sidebar__burger');
 
 	if (openBtn) {
 		openBtn.addEventListener('click', function (event) {

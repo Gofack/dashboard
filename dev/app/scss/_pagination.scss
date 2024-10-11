@@ -1,0 +1,38 @@
+.pagination {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: flex;
+	gap: 1.3rem;
+	font-size: 1.2rem;
+	&__item {
+		&-link {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border: 1px solid $gray-06;
+			border-radius: 0.4rem;
+			background: $gray-07;
+			min-width: 2.4rem;
+			height: 2.4rem;
+			&:hover {
+				text-decoration: none;
+				border-color: $purple;
+			}
+			&--active {
+				border-color: $purple;
+				background: $purple;
+				color: $white;
+			}
+			&--arrow {
+				min-width: 2.6rem;
+			}
+		}
+		&-dots {
+			display: flex;
+			align-items: flex-end;
+			justify-content: flex-end;
+			height: 100%;
+		}
+	}
+}

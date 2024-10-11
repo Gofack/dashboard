@@ -3,13 +3,29 @@
 	display: flex;
 	flex-direction: column;
 	position: fixed;
-	top: 0;
+	top: $header-height-md;
 	left: 0;
 	transform: translateX(calc(-100% - 0.5rem));
-	@include media('>desktop') {
-		position: relative;
-	}
+	background: $white;
+	transition: $transition;
+	height: calc(100vh - $header-height-md);
+	height: calc((var(--vh, 1vh) * 100 - $header-height-md));
+	padding: 2rem;
+	overflow-y: auto;
 	gap: 5rem;
+	z-index: 10;
+	@include media('>desktop') {
+		background: none;
+		top: unset;
+		transform: none;
+		position: relative;
+		padding: 0;
+		overflow: unset;
+		height: auto;
+	}
+	.menu-opened & {
+		transform: none;
+	}
 	&__logo {
 		display: flex;
 		align-items: flex-end;
